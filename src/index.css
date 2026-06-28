@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-editorial-dark: #0A0A0A;
+  --color-editorial-card: #0F0F0F;
+  --color-editorial-accent: #D1FF00;
+  --color-editorial-border: #1A1A1A;
+  --color-editorial-gray: #141414;
+}
+
+@layer utilities {
+  .animate-spin-slow {
+    animation: spin-slow 12s linear infinite;
+  }
+  
+  .animate-scan {
+    animation: scan-line 2.5s ease-in-out infinite;
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scan-line {
+  0% {
+    top: 0%;
+    opacity: 0.8;
+  }
+  50% {
+    top: 100%;
+    opacity: 0.3;
+  }
+  100% {
+    top: 0%;
+    opacity: 0.8;
+  }
+}
+
+/* Custom styles to handle Leaflet maps dark-mode invert styling */
+.leaflet-container {
+  font-family: inherit;
+  background-color: #0A0A0A;
+}
+
+/* Give the leaflet tiles a dark editorial atmosphere */
+.leaflet-tile-container {
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+

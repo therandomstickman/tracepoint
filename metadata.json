@@ -1,0 +1,6 @@
+{
+  "name": "TracePoint",
+  "description": "AI-powered image geolocation and analysis engine that estimates where a photo was taken by combining visual clues, OCR, and EXIF metadata.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
